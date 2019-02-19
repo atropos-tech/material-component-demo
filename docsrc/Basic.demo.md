@@ -1,0 +1,1 @@
+This just shows the component itself. Because no source code has been provided, the "Show/hide source code" switch is not visible.

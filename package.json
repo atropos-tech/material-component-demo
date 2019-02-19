@@ -1,0 +1,78 @@
+{
+  "name": "material-component-demo",
+  "version": "0.1.0",
+  "description": "A React component for demoing React components, optionally with source code",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atropos-tech/material-component-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atropos-tech/material-component-demo/issues"
+  },
+  "scripts": {
+    "test": "jest --watch --coverage --no-cache --runInBand",
+    "test-ci": "jest --coverage --no-cache --runInBand",
+    "dev-docs": "webpack-dev-server --config webpack.config.js --hot --inline --color --progress --open --mode development",
+    "build-docs": "rimraf ./docs && webpack --config webpack.config.js --mode=production && copyfiles -u 1 ./public/* ./docs",
+    "transpile": "babel src --out-dir lib --ignore \"src/**/*.spec.js\"",
+    "lint": "eslint src docsrc",
+    "start": "npm run dev-docs"
+  },
+  "keywords": [
+    "react-component",
+    "react",
+    "demo",
+    "material-ui"
+  ],
+  "author": "Duncan Thacker (duncan.thacker@atropos.co.uk)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.3.1",
+    "@material-ui/core": "^3.9.2",
+    "babel-loader": "^8.0.5",
+    "demo-source-loader": "^0.1.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "eslint": "^5.13.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.2.2",
+    "eslint-plugin-react": "^7.12.4",
+    "jest": "^24.1.0",
+    "jest-environment-enzyme": "^7.0.1",
+    "jest-enzyme": "^7.0.1",
+    "prop-types": "^15.6.2",
+    "raw-loader": "^1.0.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-jss": "^8.6.1",
+    "react-syntax-highlighter": "^10.1.3",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "peerDependencies": {
+    "react": "^16.8",
+    "@material-ui/core": "^3.0"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-enzyme"
+    ],
+    "testEnvironment": "enzyme",
+    "testEnvironmentOptions": {
+      "enzymeAdapter": "react16"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  },
+  "dependencies": {
+    "react-curry-component": "^1.1.0",
+    "react-markdown": "^4.0.6"
+  }
+}
