@@ -8,7 +8,7 @@ module.exports = {
     entry: "./docsrc/index.js",
     devtool: "inline-cheap-source-map",
     output: {
-        path: join(__dirname, "dist"),
+        path: join(__dirname, "docs"),
         filename: "docs-bundle.js"
     },
     module: {
@@ -23,8 +23,6 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: join(__dirname, "public"),
-        host: "0.0.0.0",
-        port: "8081"
+        contentBase: join(__dirname, "public")        
     }
 };
